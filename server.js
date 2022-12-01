@@ -3,6 +3,7 @@ const express = require('express')
 const http = require('http')
 const uuid =require('uuid')
 const app=express()
+const hostname = '0.0.0.0'
 const port = process.env.PORT || 5000
 
 const server =http.createServer(app)
@@ -72,6 +73,6 @@ io.on("connection",(socket)=>{
 })
 
 
-server.listen(port, ()=>{
+server.listen(port,hostname, ()=>{
     console.log('server running at ',port)
 })
